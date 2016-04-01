@@ -3,16 +3,14 @@ public class SuperStack {
 	
 	private int[] stack;
 	private int top;
-	private int tamanho;
 	
 	public SuperStack(int size){
 		this.stack  = new int[size];
 		this.top = 0;
-		this.tamanho = size;
 	}
 		
 	public void push(int value) throws Exception{
-		if(top <= tamanho){
+		if(top < stack.length){
 			this.stack[top] = value;
 			top++;
 		} else{
@@ -21,7 +19,7 @@ public class SuperStack {
 	}
 	
 	public int pop() throws Exception{
-		if(top >= 0){
+		if(top > 0){
 			top--;
 			return stack[top];
 		}
